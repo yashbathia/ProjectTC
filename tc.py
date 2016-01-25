@@ -4,11 +4,13 @@ import sys
 
 from enchant.checker import SpellChecker
 
-project_dir = sys.argv
+# Absolute project directory
+project_dir = sys.argv[1]
+
 chkr = SpellChecker("en_US")
 err_dict = {}
 
-for root, directories, filenames in os.walk('/Users/yashbathia/magnum'):
+for root, directories, filenames in os.walk(project_dir):
     for filename in filenames:
         # To display all files in all subdirs
         print os.path.join(root,filename)
